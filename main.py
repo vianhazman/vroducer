@@ -22,10 +22,16 @@ vr = vroducer(avro_schema, BOOTSTRAP_SERVERS,SCHEMA_REGISTRY_PATH)
 # init Flask
 app = Flask(__name__)
 
+"""
+GET /ping -> to check aliveness of the Vroducer instance
+"""
 @app.route('/ping')
 def ping_pong():
     return 'pong'
 
+"""
+POST /single -> to push single message to the Kafka
+"""
 @app.route('/single', methods=['POST'])
 def post_single_message():
     if request.method == 'POST':
@@ -33,7 +39,7 @@ def post_single_message():
         msg['message_timestamp'] = str(datetime.datetime.now())
         msg = dict(msg)
         vr.produce_message(TOPIC_NAME, msg)
-    return "a"
+    return "OK"
 
 
 app.run(host='0.0.0.0', port=8080, debug=True)
