@@ -1,0 +1,22 @@
+{
+    "namespace": "",
+    "name": "t_test_schema",
+    "type": "record",
+    "fields" : [
+      {
+        "name" : "mahasiswa_npm",
+        "type" : "string"
+      },
+      {
+        "name" : "course_id",
+        "type" : "string"
+      },
+      {
+        "name" : "message_timestamp",
+        "type" : ["null", {
+            "type" : "string",
+            "logicalType" : "timestamp-micros"
+        }]
+      }
+    ]
+ }
