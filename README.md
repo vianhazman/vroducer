@@ -10,11 +10,16 @@ The payload is the json with the same schema as the avro
 
 #### Set up and installation
 - Set up virtualenv
-1. `pip install -r requirements.txt`
+ - `pip install -r requirements.txt`
 
-- Run serving server on development
+- Run serving server,
+specify running environment (production/development)
+
+- If production, set `gunicorn_workers` and `gunicorn_threads`
+size
+
+- Run app wrapper
 ```
-python -m main
+./run_server.sh
 ```
 
-- Run serving server on production
