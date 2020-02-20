@@ -2,10 +2,10 @@ from vroducer.vroducer import vroducer
 from vroducer.utils.utils import get_avro_schema
 from dotenv import load_dotenv
 import os
-import random # TESTING
 import datetime
 from flask import Flask
 from flask import request
+
 
 
 load_dotenv()
