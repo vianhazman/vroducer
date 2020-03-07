@@ -1,0 +1,26 @@
+### SCHEMA
+seq, mac_address, no_identitas, ts_import, ts_presensi_device, nama, kd_org, rfid_tag, tipe_perangkat
+### VALUE
+390970, b8:27:eb:68:45:a3, 1806219324, 2018-11-26 08:09:07.117635, 2018-11-26 08:09:00, AARON PIETTER, 01.00.05.01, 49341145171128
+{
+    "namespace": "",
+    "name": "t_log_presentronik",
+    "type": "record",
+    "fields" : [
+      {
+        "name" : "seq",
+        "type" : "long"
+      },
+      {
+        "name" : "course_id",
+        "type" : "string"
+      },
+      {
+        "name" : "message_timestamp",
+        "type" : ["null", {
+            "type" : "string",
+            "logicalType" : "timestamp-micros"
+        }]
+      }
+    ]
+ }
